@@ -1,27 +1,124 @@
-/* Responsive */
+/* Responsive styles */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
+    color: white;
   }
 
   .nav-links {
-    flex-direction: column;
-    background: rgba(0, 0, 0, 0.9);
     position: absolute;
-    top: 60px;
+    top: 70px;
     right: 0;
     width: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    flex-direction: column;
+    align-items: center;
     display: none;
+    padding: 1rem 0;
+    gap: 15px;
   }
 
   .nav-links.open {
     display: flex;
   }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    padding: 10px;
+    display: block;
+    width: 100%;
+    font-size: 1.2rem;
+  }
+
+  .caption1, .caption2, .caption3 {
+    position: absolute;
+    padding: 1rem;
+    width: 90%;
+    left: 5%;
+    bottom: 10%;
+    background-color: rgba(0,0,0,0.5);
+    text-align: center;
+  }
+
+  .caption1 h1, .caption2 h1, .caption3 h1,
+  .caption1 h2, .caption2 h2, .caption3 h2,
+  .caption1 p, .caption2 p, .caption3 p {
+    font-size: 1rem;
+  }
+
+  .slide img {
+    height: 300px;
+  }
+
+  .title span {
+    font-size: 1.4rem;
+  }
+
+  .nav.prev,
+  .nav.next {
+    font-size: 1.5rem;
+    padding: 0.3rem 0.6rem;
+  }
 }
 
+@media (max-width: 480px) {
+  .logo {
+    font-size: 1.2rem;
+  }
 
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .carousel-container {
+    height: auto;
+  }
+
+  .caption1, .caption2, .caption3 {
+    padding: 0.8rem;
+  }
+
+  .caption1 h1, .caption2 h1, .caption3 h1 {
+    font-size: 1.2rem;
+  }
+
+  .caption1 h2, .caption2 h2, .caption3 h2 {
+    font-size: 0.9rem;
+  }
+
+  .caption1 p, .caption2 p, .caption3 p {
+    font-size: 0.8rem;
+  }
+}
+
+/* === Responsive Sidebar === */
 @media (max-width: 768px) {
-  .caption h2 { font-size: 1.2rem; }
-  .caption p { font-size: 0.9rem; }
-  .slide img { height: 400px; }
+  .sidebar {
+    width: 100%;
+    right: -100%;
+    padding: 2rem 1rem;
+  }
+
+  #click-2:checked ~ .sidebar {
+    right: 0;
+  }
+
+  .sidebar img {
+    width: 80px;
+  }
+
+  .sidebar p,
+  .sidebar a,
+  .sidebar h3,
+  .sidebar h6 {
+    font-size: 0.9rem;
+  }
+
+  .social-icons a {
+    font-size: 1rem;
+  }
 }

@@ -29,9 +29,16 @@ body {
 }
 
 .logo {
-  font-size: 24px;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
 }
+
+.logo img {
+  height: 50px;
+  max-width: 150px;
+  border-radius:10%;
+}
+
 
 .nav-links {
   list-style: none;
@@ -49,6 +56,108 @@ body {
   display: none;
   font-size: 24px;
   cursor: pointer;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+}
+
+.nav-icons a {
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+.menu-btn-2 {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: white;
+}
+
+#click-2 {
+  display: none;
+}
+
+
+
+/* === Sidebar Styles === */
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100%;
+  background-color: #222;
+  color: white;
+  padding: 2rem 1.5rem;
+  transition: right 0.4s ease;
+  overflow-y: auto;
+  z-index: 9999;
+}
+
+/* Toggle sidebar using checkbox */
+#click-2:checked ~ .sidebar {
+  right: 0;
+}
+
+/* Close button inside sidebar */
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+  z-index: 10;
+}
+
+/* Sidebar content styling */
+.sidebar img {
+  width: 100px;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+.sidebar p {
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.sidebar h3 {
+  margin-top: 1.5rem;
+  font-size: 1rem;
+  color: #f3198d;
+}
+
+.sidebar a {
+  display: block;
+  color: #f3f3f3;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+.sidebar h6 {
+  font-size: 0.8rem;
+  color: #aaa;
+  margin-bottom: 0.5rem;
+}
+
+.social-icons {
+  margin-top: 1.2rem;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.social-icons a {
+  color: white;
+  font-size: 1.1rem;
 }
 
   
@@ -91,9 +200,11 @@ body {
 
 .slide img {
   width: 100%;
-  height: 600px;
+  height: auto;
+  max-height: 600px;
   object-fit: cover;
 }
+
 .caption1 {
   position: absolute;
   bottom: 40%;
@@ -122,7 +233,7 @@ body {
   right:3%;
   padding:4rem;
   color: #fff;
-  border: radius 10%;
+  border-radius: 10px;
  
 }
 

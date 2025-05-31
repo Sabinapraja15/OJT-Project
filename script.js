@@ -29,3 +29,11 @@ setInterval(() => {
   moveSlide(1);
 }, 5000);
 
+
+document.querySelectorAll('.sidebar a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.getElementById('click-2').checked = false;
+  });
+});
+
+
