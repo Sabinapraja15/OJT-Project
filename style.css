@@ -81,21 +81,22 @@ body {
   display: none;
 }
 
-
-
 /* === Sidebar Styles === */
 .sidebar {
   position: fixed;
   top: 0;
   right: -320px;
   width: 300px;
-  height: 100%;
+  height: 100vh;
   background-color: #222;
-  color: white;
-  padding: 2rem 1.5rem;
-  transition: right 0.4s ease;
+  color: #eee;
+  padding: 2.5rem 2rem;
+  box-shadow: -4px 0 15px rgba(0, 0, 0, 0.7);
+  transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow-y: auto;
   z-index: 9999;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-left: 2px solid #f3198d;
 }
 
 /* Toggle sidebar using checkbox */
@@ -108,59 +109,86 @@ body {
   position: absolute;
   top: 15px;
   right: 15px;
-  font-size: 1.5rem;
-  color: white;
+  font-size: 1.8rem;
+  color: #f3198d;
   cursor: pointer;
+  transition: color 0.3s ease;
   z-index: 10;
+}
+
+.close-btn:hover {
+  color: #ff59b3;
 }
 
 /* Sidebar content styling */
 .sidebar img {
-  width: 100px;
+  width: 110px;
   display: block;
-  margin: 0 auto 1rem;
+  margin: 0 auto 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(243, 25, 141, 0.5);
+  object-fit: cover;
 }
 
 .sidebar p {
-  font-size: 0.9rem;
-  margin-bottom: 1rem;
-  line-height: 1.5;
-}
-
-.sidebar h3 {
-  margin-top: 1.5rem;
   font-size: 1rem;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  color: #ccc;
+  letter-spacing: 0.02em;
+}
+  .sidebar h3 {
+  margin-top: 2rem;
+  font-size: 1.1rem;
   color: #f3198d;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid #f3198d;
+  padding-bottom: 0.3rem;
 }
 
 .sidebar a {
   display: block;
   color: #f3f3f3;
-  margin-top: 0.5rem;
-  font-size: 0.95rem;
+  margin-top: 0.6rem;
+  font-size: 1rem;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+  color: #f3198d;
+  text-decoration: underline;
 }
 
 .sidebar h6 {
-  font-size: 0.8rem;
-  color: #aaa;
-  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  color: #999;
+  margin-bottom: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
 }
 
+/* Social icons container */
 .social-icons {
-  margin-top: 1.2rem;
+  margin-top: 1.8rem;
   display: flex;
-  gap: 10px;
+  gap: 12px;
   flex-wrap: wrap;
   justify-content: center;
 }
 
 .social-icons a {
   color: white;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
+  transition: color 0.3s ease;
 }
 
-  
+.social-icons a:hover {
+  color: #f3198d;
+}
+
 
 /*homepage*/
 
@@ -195,6 +223,21 @@ body {
 
 .slide {
   min-width: 100%;
+  position: relative;
+}
+.carousel .slide {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.carousel .slide.active {
+  display: block;
+  opacity: 1;
   position: relative;
 }
 
@@ -452,4 +495,95 @@ font-size:var(--h3-font-size);
 }
 .section-title span{
   color: #f3198d;
+}
+
+/*footer*/
+footer {
+  background-color: #222;
+  color: #fff;
+  padding: 60px 20px 30px;
+  font-family: 'Segoe UI', sans-serif;
+  border-radius: 200px 0;
+}
+
+footer .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  gap: 30px;
+}
+
+footer .col {
+  flex: 1 1 220px;
+  min-width: 200px;
+}
+
+footer .logo {
+  width: 120px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+footer h3 {
+  margin-bottom: 15px;
+  color: #ffb6c1;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+}
+
+footer p,
+footer li,
+footer a {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #ccc;
+  text-decoration: none;
+}
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 10px;
+}
+
+footer ul li a:hover {
+  color: #ff69b4;
+}
+
+footer .Email-id {
+  margin-top: 10px;
+  display: block;
+  color: #ffb6c1;
+}
+
+footer form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+footer input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  font-size: 0.95rem;
+}
+
+footer button {
+  padding: 10px;
+  background-color: #ff69b4;
+  border: none;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+footer button:hover {
+  background-color: #ff1493;
 }
