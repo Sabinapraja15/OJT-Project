@@ -1,10 +1,20 @@
-// Toggle mobile menu
-const toggle = document.getElementById('mobile-menu');
-const navLinks = document.getElementById('nav-links');
+// navbar
+ const menuToggle = document.getElementById('mobile-menu');
+  const navLinks = document.getElementById('nav-links');
 
-toggle.addEventListener('click', () => {
-  navLinks.classList.toggle('open');
-});
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+
+  window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+      navbar.classList.add('shrink');
+    } else {
+      navbar.classList.remove('shrink');
+    }
+  });
+
 
 /*carousel*/
 let currentSlide = 0;
@@ -64,14 +74,26 @@ let currentSlide = 0;
   showSlide(currentSlide);
   startAutoSlide();
 
+/*About */
+ document.addEventListener('DOMContentLoaded', () => {
+    const aboutSection = document.querySelector('.about-section');
 
-/*sidebar*/
-document.querySelectorAll('.sidebar a').forEach(link => {
-  link.addEventListener('click', () => {
-    document.getElementById('click-2').checked = false;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('fade-in');
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+      }
+    );
+     observer.observe(aboutSection);
   });
-});
 
+  
 /*footer*/
 document.querySelector("footer form").addEventListener("submit", function (e) {
     e.preventDefault();
