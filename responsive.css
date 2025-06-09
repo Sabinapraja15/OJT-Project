@@ -71,7 +71,15 @@
     margin-top: 20px;
     max-width: 80%;
   }
-  
+  /*services*/
+   .service-content-description {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .service-content-description .box .inner img {
+        width: 80px;
+    }
+    
   /*testimonials*/
   .testimonials {
     padding: 3rem 1rem;
