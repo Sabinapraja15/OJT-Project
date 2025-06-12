@@ -75,25 +75,70 @@ let currentSlide = 0;
   startAutoSlide();
 
 /*About */
+document.addEventListener('DOMContentLoaded', () => {
+  const aboutSection = document.querySelector('.about');
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('fade-in');
+        } else {
+          entry.target.classList.remove('fade-in');
+        }
+      });
+    },
+    {
+      threshold: 0.5,
+    }
+  );
+
+  if (aboutSection) {
+    observer.observe(aboutSection);
+  }
+});
+
+/*services*/
  document.addEventListener('DOMContentLoaded', () => {
-    const aboutSection = document.querySelector('.about-section');
+    const serviceBoxes = document.querySelectorAll('.services .box');
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
+            entry.target.classList.add('fade-in-up');
+          } else {
+            entry.target.classList.remove('fade-in-up'); // Reset when out of view
           }
         });
       },
       {
-        threshold: 0.5,
+        threshold: 0.3, // Trigger when 30% of element is visible
       }
     );
-     observer.observe(aboutSection);
+
+    serviceBoxes.forEach((box) => observer.observe(box));
   });
 
-  
+/*packages*/
+
+/*gallery*/
+document.addEventListener("DOMContentLoaded", () => {
+    const btn = document.querySelector(".gallery .btn");
+    const hiddenImages = document.querySelectorAll(".gallery-img.hidden");
+
+    btn.addEventListener("click", () => {
+      const isHidden = hiddenImages[0].style.display === "none" || hiddenImages[0].style.display === "";
+
+      hiddenImages.forEach(img => {
+        img.style.display = isHidden ? "block" : "none";
+      });
+
+      btn.textContent = isHidden ? "see less" : "see more";
+    });
+  });
+
+
 /*footer*/
 document.querySelector("footer form").addEventListener("submit", function (e) {
     e.preventDefault();
