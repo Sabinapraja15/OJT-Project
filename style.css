@@ -9,7 +9,9 @@ body {
   background: #fff;
   color: #333;
 }
-
+html{
+scroll-behavior:smooth;
+}
 /* Navbar Styles */
 .navbar {
   position: sticky;
