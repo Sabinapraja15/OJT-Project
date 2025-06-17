@@ -93,7 +93,10 @@
   .testimonials-item:hover .testimonials-img img {
     transform: none;
   }
-
+/*contact*/
+.contact-content {
+    flex-direction: column;
+}
   /*footer*/
   footer .row {
     flex-direction: column;

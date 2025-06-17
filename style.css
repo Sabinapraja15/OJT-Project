@@ -114,14 +114,6 @@ scroll-behavior:smooth;
 /* Mobile Responsiveness */
 
 /*homepage*/
-
-.title {
-  text-align: center;
-  padding: 2.5rem;
-  font-size: 2rem;
-  color: #880e4f;
-}
-
 .site-title {
   font-size: 2rem;
   color: #880e4f;
@@ -271,6 +263,7 @@ scroll-behavior:smooth;
 }
 
 .section-title span {
+  font-size: 1.3rem;
   line-height: 1.5rem;
   color: #f3198d;
   letter-spacing: 1px;
@@ -620,8 +613,7 @@ background-image: url(./image/bg.jpg);
   background-color: #ff1493;
 }
 
-
-/*conatct css*/
+/*contact*/
 .contact-section {
   background-color: #fff8f7;
   padding: 60px 0;
@@ -681,6 +673,13 @@ textarea {
   background-color: #fff;
 }
 
+input:focus,
+textarea:focus,
+button:focus {
+  outline: 2px solid #c0392b;
+  outline-offset: 2px;
+}
+
 button {
   background-color: #e74c3c;
   color: white;
@@ -695,6 +694,7 @@ button {
 button:hover {
   background-color: #490b04;
 }
+
 
 /*testimonials*/
 .testimonials {
